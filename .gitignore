@@ -1,0 +1,9 @@
+repo.secrets
+services/frontend/opentax/.env.local
+services/backend/.env
+services/backend/migrations/__pycache__/
+services/backend/.venv/
+services/backend/*.sqlite3
+services/backend/logs/
+services/backend/__pycache__
+services/frontend/node_modules/
