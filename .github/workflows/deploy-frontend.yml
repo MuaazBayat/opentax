@@ -24,7 +24,13 @@ jobs:
 
       - name: Build & push Frontend Docker images
         run: |
-          docker buildx build --platform linux/amd64 --build-arg NEXT_PUBLIC_BACKEND_URL=${{ secrets.BACKEND_URL }} -t $FRONTEND_IMAGE -f services/frontend/opentax/frontend.dockerfile services/frontend/opentax
+          docker buildx build \
+            --platform linux/amd64 \
+            --build-arg NEXT_PUBLIC_POSHOG_KEY=${{ secrets.POSTHOG_API_KEY }} \
+            --build-arg NEXT_PUBLIC_BACKEND_URL=${{ secrets.BACKEND_URL }} \
+            -t $FRONTEND_IMAGE \
+            -f services/frontend/opentax/frontend.dockerfile \
+            services/frontend/opentax.
           docker push $FRONTEND_IMAGE
 
       - name: Google Auth
