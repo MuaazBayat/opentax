@@ -30,7 +30,7 @@ jobs:
             --build-arg NEXT_PUBLIC_BACKEND_URL=${{ secrets.BACKEND_URL }} \
             -t $FRONTEND_IMAGE \
             -f services/frontend/opentax/frontend.dockerfile \
-            services/frontend/opentax.
+            services/frontend/opentax
           docker push $FRONTEND_IMAGE
 
       - name: Google Auth
