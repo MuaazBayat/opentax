@@ -2,7 +2,7 @@ name: ☁️ Deploy Backend to Cloud Run
 
 env:
   TAG: ${{ github.event.release.tag_name || 'release-test' }}
-  BACKEND_IMAGE: ${{ secrets.DOCKER_HUB_USERNAME }}/evvaluate-backend:${{ github.event.release.tag_name || 'release-test' }}
+  BACKEND_IMAGE: ${{ secrets.DOCKER_HUB_USERNAME }}/opentax-backend:${{ github.event.release.tag_name || 'release-test' }}
 
 on:
   release:
