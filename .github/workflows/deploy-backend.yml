@@ -28,7 +28,7 @@ jobs:
             --platform linux/amd64 \
             -t $BACKEND_IMAGE \
             -f services/backend/backend.dockerfile \
-            services/backend/.
+            services/backend/
           docker push $BACKEND_IMAGE
 
       - name: Google Auth
@@ -43,7 +43,7 @@ jobs:
         with:
           service: 'opentax-backend'
           image: ${{ env.BACKEND_IMAGE }}
-          flags: '--allow-unauthenticated --port=8000 --update-env-vars=GROQ_API_KEY=${{ secrets.GROQ_API_KEY }},DATABASE_URL=${{ secrets.DATABASE_URL }},DEBUG=True'
+          flags: '--allow-unauthenticated --port=8000 --update-env-vars=GROQ_API_KEY=${{ secrets.GROQ_API_KEY }},DATABASE_URL=${{ secrets.DATABASE_URL }}'
           container_port: 8000
 
       - name: Show Output
