@@ -22,7 +22,7 @@ RUN echo "NEXT_PUBLIC_BACKEND_URL=$NEXT_PUBLIC_BACKEND_URL" > .env
 RUN npm run build
 
 # Use the official Node.js 18 image for the production stage
-FROM node:18-alpine AS production
+FROM node:20-alpine AS production
 
 # Set the working directory
 WORKDIR /app

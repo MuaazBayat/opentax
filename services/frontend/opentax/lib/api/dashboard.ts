@@ -68,7 +68,7 @@ export async function getInvoices(
 
   if (!response.ok) {
     const errorBody = await response.text();
-    console.error('API Error:', response.status, errorBody);
+    console.error('API Err:', response.status, errorBody);
     throw new Error(`Failed to fetch invoices: ${response.statusText}. ${errorBody}`);
   }
 
